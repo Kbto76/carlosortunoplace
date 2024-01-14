@@ -1,0 +1,750 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--carga del framework responsive bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="css/index.css">
+
+    <title>App-home</title>
+</head>
+
+<body onload="guardar();">
+
+    <section class="container-fluid text-center cuerpo fixed-top" style="position: sticky;background-color: #236CB1;">
+        <div class="conatiner">
+
+
+            <div class="text-center ">
+                <h1>MC-APLICACIÓN</h1>
+                <div id="texto-arriba">
+                    <h2>La mejor app para compar alimentos y bebidas.</h2>
+                    <p>Los Precios del menú no incluyen el IVA 15%, ni el cargo por servicio. </p>
+                </div>
+            </div>
+
+            <div>
+                <button style="width:100px" type="button" class="btn btn-danger" onclick="location. reload()">REINICIAR </button>
+                <button style="width:100px " type="button " class="btn btn-danger " onclick="verPuntos();">PUNTOS</button>
+                <a href="index.html" style="width:100px " type="button " class="btn btn-danger ">SALIR</a>
+
+
+            </div>
+            <div class="text-center divisor">
+
+            </div>
+            <!---->
+            <div class="text-center" id="solo-mac-texto">
+                <p>Por el momento solo ofrecemos el menú de pequeños precios de McDonald's</p>
+            </div>
+            <div classs="ms-4 ">
+                <img id="logo-escondido" src="imgs/logo 2 sin fondo.png" alt="" class="img-fluid  suave" style="width:60%">
+            </div>
+            <!--FACTURACION ESCONDIDA-->
+
+            <div class=" row d-flex justify-content-center ">
+                <div class="col-lg-4 text-start pt-5 ps-4">
+                    <h2 id="cincomil" style="display:none">Por cada ¢5000 acumulas 1 Pt</h2>
+                    <p id="diez" style="display:none">5Pts = 2 tickets<br>15Pts = 4 tickets 2 palomitas </p>
+                    <p id="quince" style="display:none"></p>
+                </div>
+                <div class=" col-lg-4 ">
+                    <div class="   ">
+                        <h2 id="fac-titulo" style="display:none">FACTURA</h2>
+                        <!--subtotal escondido-->
+                        <div class="row factura ">
+
+                            <div class="  col-sm-6 col-md-6 col-lg-6  text-end ">
+                                <h2 id="sub-escondido" style="display:none"><strong>SubtoTal:</strong></h2>
+                            </div>
+                            <div class=" col-sm-6  col-md-6 col-lg-6 text-start ">
+                                <h2 id="subtotal" style="font-weight:bold; color:brown"></h2>
+                            </div>
+                        </div>
+                        <!--IVA econdido-->
+                        <div class="row factura ">
+                            <div class="  col-sm-6 col-sm-6 col-lg-6  text-end ">
+                                <h2 id="iva-escondido" style="display:none"><strong>IVA15%:</strong></h2>
+                            </div>
+                            <div class="  col-sm-6 col-sm-6 col-lg-6 text-start ">
+                                <h2 id="iva" style="font-weight:bold; color:brown"></h2>
+                            </div>
+                        </div>
+                        <!--SERVICIO escondido-->
+                        <div class="row factura ">
+                            <div class="  col-sm-6 col-sm-6 col-lg-6  text-end ">
+                                <h2 id="serv-escondido" style="display:none"><strong>SERV10%:</strong></h2>
+                            </div>
+                            <div class="  col-sm-6 col-sm-6 col-lg-6 text-start ">
+                                <h2 id="serv" style="font-weight:bold; color:brown"></h2>
+                            </div>
+                        </div>
+                        <!--TOTAL escondido-->
+                        <div class="row factura ">
+                            <div class="  col-sm-6 col-sm-6 col-lg-6  text-end ">
+                                <h2 id="total-escondido" style="display:none;color:brown"><strong>TOTAL:</strong></h2>
+                            </div>
+                            <div class="  col-sm-6 col-sm-6 col-lg-6 text-start ">
+                                <h2 id="total" style="font-weight:bold; color:#F1E444"></h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 text-start pt-5 pe-4">
+                    <h2 id="puntos-acumu" style="font-size:bold;display:none"></h2>
+                    <p id="premio-dispo" style="display:none">Premios disponibles:</p>
+                    <div id="premio-img" style="display:none" class="text-center">
+                        <img src="imgs/tickets.png" alt="" class="img-fluid " style="width:50%">
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!--TARJETA escondido-->
+            <div class="form   d-flex flex-column align-items-center">
+                <div class="col-sm-10  text-center pb-1">
+                    <input type="text" class="form-control" placeholder="Digite su numbre completo" id="nombre" style="display:none">
+                </div>
+                <div class="col-sm-10  pb-1">
+                    <input id="cc" style="display:none" class="form-control" type="tel" inputmode="numeric" pattern="[0-9\s]{13,19}" autocomplete="cc-number" maxlength="19" placeholder="Digite el número de tarjeta: xxxx xxxx xxxx xxxx">
+                </div>
+                <div class="col-sm-10  pb-1 d-flex flex-row justify-content-between">
+                    <input id="expira" style="width:140px;display:none" class="form-control" type="date" value="" min="2022-01-01" max="2025-12-31">
+                    <select class="form-control " id="tarjeta" style="width:140px;display:none">
+                        <option selected disabled value="">--Tipo de tarjeta</option> 
+                        <option value="visa">Visa</option>
+                        <option value="master">Master Card</option>
+                        <option value="amex">American Express</option>
+                        <option value="discover">Discover</option>
+        
+                    </select>
+                    <input id="cvv" type="text" class="form-control" placeholder="Número CVV" style="width:140px;display:none" inputmode="numeric" pattern="[0-9\s]{13,19}" maxlength="3">
+                    <button style="width:100px;display:none " type="button " class="btn btn-danger " id="pagar" onclick="validar();">PAGAR</button>
+                </div>
+            </div>
+            <!--Hora de la comida-->
+
+            <div class="form   container d-flex flex-row align-items-center justify-content-around " style="padding-left:48px;padding-right:49px">
+                <div class="col-sm-10  text-center pb-1" style="width:125px">
+                    <select id="ciudad" type="text" class="form-control" placeholder="Ubicacion de cine" style="display:none">
+                            <option selected disabled value="">Select Ciudad</option>
+                            <option >Desamparados</option>
+                            <option >Heredia</option>
+                            </select>
+                </div>
+                <div class="col-sm-10  text-center pb-1" style="width:120px">
+                    <select id="sala-select" type="text" class="form-control" style="display:none">
+                            <option selected disabled value="">Select Sala</option>
+                            <option >Sala1</option>
+                            <option >Sala2</option>
+                            <option >Sala3</option>
+                            <option >Sala4</option>
+                            <option >Sala5</option>
+                            <option >Sala6</option>
+                            </select>
+                </div>
+                <div class="col-sm-10  text-center pb-1" style="width:140px">
+                    <select id="Butaca" type="text" class="form-control" placeholder="Ubicacion de cine" style="display:none">
+                            <option selected disabled value="">Select Butaca</option>
+                           <option >A-1</option>
+                           <option >A-2</option>
+                           <option >A-3</option>
+                           <option >A-4</option>
+                           <option >A-5</option>
+                           <option >A-6</option>
+                           <option >A-7</option>
+                           <option >A-8</option>
+                           <option >A-9</option>
+                            </select>
+                </div>
+                <div class="col-sm-10  text-center pb-1" style="width:140px">
+                    <div class="d-flex flex-row align-items-center ">
+                        <p id="hora1" style="display:none">Hora: </p>
+                        <input id="hora2" class="form-control" placeholder="Select Hora" style="width:140px;display:none" type="time" id="appt" min="09:00" max="18:00" required>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+    </section>
+    <!--ACCORDEON MENU-->
+    <section id="menu" class="container-fluid text-center cuerpo ">
+        <div class="accordion " id="accordionExample">
+            <div class="accordion-item ">
+                <h2 class="accordion-header rounded rounded-5 " id="headingOne">
+                    <button class="accordion-button collapsed " type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" style="background-color: #F1E444"> <h2>Menu</h2> </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse rounded-0" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <!--coke-->
+                        <div class="row ">
+
+                            <div class=" col-sm-4 col-md-4 col-lg-4 d-flex   justify-content-center align-items-center">
+                                <img src="imgs/coke-removebg-preview.png" alt="" class="img-fluid">
+                            </div>
+                            <div class=" col-sm-4 col-md-4 col-lg-4 d-flex   justify-content-center align-items-center">
+                                <h2 id="click-borrar-Coke" style="display:none">Producto agregado</h2>
+                                <select name="coke" id="coke">
+                                                <option selected disabled>CANT</option>                        
+                                                <option>1</option>
+                                                <option>2</option>
+                                                <option>3</option>
+                                                <option>4</option>
+                                                <option>5</option>
+                                                <option>6</option>
+                                                <option>7</option>
+                                                <option>8</option>
+                                                <option>9</option>
+                                                <option>10</option>
+                                            </select>
+                            </div>
+                            <div class=" col-sm-4 col-md-4 col-lg-4 d-flex   justify-content-center align-items-center">
+
+                                <div>
+                                    <p>Precio:¢1000</p>
+                                    <h2 id="precio-coke"></h2>
+                                    <div class="text-center d-flex   justify-content-center align-items-center">
+                                        <button class="btn-borrar-seleccion" id="btn-borrar-coke" style="display:none" onclick="borrarCoke();">Borrar</button>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                        <!--manzana-->
+                        <div class="row ">
+
+                            <div class=" col-sm-4 col-md-4 col-lg-4 d-flex   justify-content-center align-items-center">
+                                <img src="imgs/manzana-removebg-preview.png" alt="" class="img-fluid">
+                            </div>
+                            <div class=" col-sm-4 col-md-4 col-lg-4 d-flex   justify-content-center align-items-center">
+                                <h2 id="click-borrar-manzana" style="display:none">Producto agregado</h2>
+                                <select name="manzana" id="manzana">
+                                                <option selected disabled>CANT</option>                        
+                                                <option>1</option>
+                                                <option>2</option>
+                                                <option>3</option>
+                                                <option>4</option>
+                                                <option>5</option>
+                                                <option>6</option>
+                                                <option>7</option>
+                                                <option>8</option>
+                                                <option>9</option>
+                                                <option>10</option>
+                                            </select>
+                            </div>
+                            <div class=" col-sm-4 col-md-4 col-lg-4 d-flex   justify-content-center align-items-center">
+                                <div>
+                                    <p>Precio:¢1500</p>
+                                    <h2 id="precio-manzana"></h2>
+                                    <div class="text-center d-flex   justify-content-center align-items-center">
+                                        <button class="btn-borrar-seleccion" id="btn-borrar-manzana" style="display:none" onclick="borrarmanzana();">Borrar</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <!--almendras-->
+                        <div class="row ">
+
+                            <div class=" col-sm-4 col-md-4 col-lg-4 d-flex   justify-content-center align-items-center">
+                                <img src="imgs/mymalmen-removebg-preview.png" alt="" class="img-fluid">
+                            </div>
+                            <div class=" col-sm-4 col-md-4 col-lg-4 d-flex   justify-content-center align-items-center">
+                                <h2 id="click-borrar-almendras" style="display:none">Producto agregado</h2>
+                                <select name="almendras" id="almendras">
+                                                <option selected disabled>CANT</option>                        
+                                                <option>1</option>
+                                                <option>2</option>
+                                                <option>3</option>
+                                                <option>4</option>
+                                                <option>5</option>
+                                                <option>6</option>
+                                                <option>7</option>
+                                                <option>8</option>
+                                                <option>9</option>
+                                                <option>10</option>
+                                            </select>
+                            </div>
+                            <div class=" col-sm-4 col-md-4 col-lg-4 d-flex   justify-content-center align-items-center">
+                                <div>
+                                    <p>Precio:¢2000</p>
+                                    <h2 id="precio-almendras"></h2>
+                                    <div class="text-center d-flex   justify-content-center align-items-center">
+                                        <button class="btn-borrar-seleccion" id="btn-borrar-almendras" style="display:none" onclick="borraralmendras();">Borrar</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <!--mymchoco-->
+                        <div class="row ">
+
+                            <div class=" col-sm-4 col-md-4 col-lg-4 d-flex   justify-content-center align-items-center">
+                                <img src="imgs/mymchoco.jpg" alt="" class="img-fluid">
+                            </div>
+                            <div class=" col-sm-4 col-md-4 col-lg-4 d-flex   justify-content-center align-items-center">
+                                <h2 id="click-borrar-mymchoco" style="display:none">Producto agregado</h2>
+                                <select name="mymchoco" id="mymchoco">
+                                                <option selected disabled>CANT</option>                        
+                                                <option>1</option>
+                                                <option>2</option>
+                                                <option>3</option>
+                                                <option>4</option>
+                                                <option>5</option>
+                                                <option>6</option>
+                                                <option>7</option>
+                                                <option>8</option>
+                                                <option>9</option>
+                                                <option>10</option>
+                                            </select>
+                            </div>
+                            <div class=" col-sm-4 col-md-4 col-lg-4 d-flex   justify-content-center align-items-center">
+                                <div>
+                                    <p>Precio:¢2000</p>
+                                    <h2 id="precio-mymchoco"></h2>
+                                    <div class="text-center d-flex   justify-content-center align-items-center">
+                                        <button class="btn-borrar-seleccion" id="btn-borrar-mymchoco" style="display:none" onclick="borrarmymchoco();">Borrar</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <!--nuggets-->
+                        <div class="row ">
+
+                            <div class=" col-sm-4 col-md-4 col-lg-4 d-flex   justify-content-center align-items-center">
+                                <img src="imgs/nuggets-removebg-preview.png" alt="" class="img-fluid">
+                            </div>
+                            <div class=" col-sm-4 col-md-4 col-lg-4 d-flex   justify-content-center align-items-center">
+                                <h2 id="click-borrar-nuggets" style="display:none">Producto agregado</h2>
+                                <select name="niggets" id="nuggets">
+                                                <option selected disabled>CANT</option>                        
+                                                <option>1</option>
+                                                <option>2</option>
+                                                <option>3</option>
+                                                <option>4</option>
+                                                <option>5</option>
+                                                <option>6</option>
+                                                <option>7</option>
+                                                <option>8</option>
+                                                <option>9</option>
+                                                <option>10</option>
+                                            </select>
+                            </div>
+                            <div class=" col-sm-4 col-md-4 col-lg-4 d-flex   justify-content-center align-items-center">
+                                <div>
+                                    <p>Precio:¢2000</p>
+                                    <h2 id="precio-nuggets"></h2>
+                                    <div class="text-center d-flex   justify-content-center align-items-center">
+                                        <button class="btn-borrar-seleccion" id="btn-borrar-nuggets" style="display:none" onclick="borrarnuggets();">Borrar</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <!--papas-->
+                        <div class="row ">
+
+                            <div class=" col-sm-4 col-md-4 col-lg-4 d-flex   justify-content-center align-items-center">
+                                <img src="imgs/papas-removebg-preview.png" alt="" class="img-fluid">
+                            </div>
+                            <div class=" col-sm-4 col-md-4 col-lg-4 d-flex   justify-content-center align-items-center">
+                                <h2 id="click-borrar-papas" style="display:none">Producto agregado</h2>
+                                <select name="papas" id="papas">
+                                                <option selected disabled>CANT</option>                        
+                                                <option>1</option>
+                                                <option>2</option>
+                                                <option>3</option>
+                                                <option>4</option>
+                                                <option>5</option>
+                                                <option>6</option>
+                                                <option>7</option>
+                                                <option>8</option>
+                                                <option>9</option>
+                                                <option>10</option>
+                                            </select>
+                            </div>
+                            <div class=" col-sm-4 col-md-4 col-lg-4 d-flex   justify-content-center align-items-center">
+                                <div>
+                                    <p>Precio:¢1000</p>
+                                    <h2 id="precio-papas"></h2>
+                                    <div class="text-center d-flex   justify-content-center align-items-center">
+                                        <button class="btn-borrar-seleccion" id="btn-borrar-papas" style="display:none" onclick="borrarpapas();">Borrar</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <!--pina-->
+                        <div class="row ">
+
+                            <div class=" col-sm-4 col-md-4 col-lg-4 d-flex   justify-content-center align-items-center">
+                                <img src="imgs/piña-removebg-preview.png" alt="" class="img-fluid">
+                            </div>
+                            <div class=" col-sm-4 col-md-4 col-lg-4 d-flex   justify-content-center align-items-center">
+                                <h2 id="click-borrar-pina" style="display:none">Producto agregado</h2>
+                                <select name="pina" id="pina">
+                                                <option selected disabled>CANT</option>                        
+                                                <option>1</option>
+                                                <option>2</option>
+                                                <option>3</option>
+                                                <option>4</option>
+                                                <option>5</option>
+                                                <option>6</option>
+                                                <option>7</option>
+                                                <option>8</option>
+                                                <option>9</option>
+                                                <option>10</option>
+                                            </select>
+                            </div>
+                            <div class=" col-sm-4 col-md-4 col-lg-4 d-flex   justify-content-center align-items-center">
+                                <div>
+                                    <p>Precio:¢1500</p>
+                                    <h2 id="precio-pina"></h2>
+                                    <div class="text-center d-flex   justify-content-center align-items-center">
+                                        <button class="btn-borrar-seleccion" id="btn-borrar-pina" style="display:none" onclick="borrarpina();">Borrar</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <!--popcaramel-->
+                        <div class="row ">
+
+                            <div class=" col-sm-4 col-md-4 col-lg-4 d-flex   justify-content-center align-items-center">
+                                <img src="imgs/popcaramel-removebg-preview.png" alt="" class="img-fluid">
+                            </div>
+                            <div class=" col-sm-4 col-md-4 col-lg-4 d-flex   justify-content-center align-items-center">
+                                <h2 id="click-borrar-popcaramel" style="display:none">Producto agregado</h2>
+                                <select name="popcaramel" id="popcaramel">
+                                                <option selected disabled>CANT</option>                        
+                                                <option>1</option>
+                                                <option>2</option>
+                                                <option>3</option>
+                                                <option>4</option>
+                                                <option>5</option>
+                                                <option>6</option>
+                                                <option>7</option>
+                                                <option>8</option>
+                                                <option>9</option>
+                                                <option>10</option>
+                                            </select>
+                            </div>
+                            <div class=" col-sm-4 col-md-4 col-lg-4 d-flex   justify-content-center align-items-center">
+                                <div>
+                                    <p>Precio:¢3000</p>
+                                    <h2 id="precio-popcaramel"></h2>
+                                    <div class="text-center d-flex   justify-content-center align-items-center">
+                                        <button class="btn-borrar-seleccion" id="btn-borrar-popcaramel" style="display:none" onclick="borrarpopcaramel();">Borrar</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <!--pop-->
+                        <div class="row ">
+
+                            <div class=" col-sm-4 col-md-4 col-lg-4 d-flex   justify-content-center align-items-center">
+                                <img src="imgs/pop-removebg-preview.png" alt="" class="img-fluid">
+                            </div>
+                            <div class=" col-sm-4 col-md-4 col-lg-4 d-flex   justify-content-center align-items-center">
+                                <h2 id="click-borrar-pop" style="display:none">Producto agregado</h2>
+                                <select name="pop" id="pop">
+                                                <option selected disabled>CANT</option>                        
+                                                <option>1</option>
+                                                <option>2</option>
+                                                <option>3</option>
+                                                <option>4</option>
+                                                <option>5</option>
+                                                <option>6</option>
+                                                <option>7</option>
+                                                <option>8</option>
+                                                <option>9</option>
+                                                <option>10</option>
+                                            </select>
+                            </div>
+                            <div class=" col-sm-4 col-md-4 col-lg-4 d-flex   justify-content-center align-items-center">
+                                <div>
+                                    <p>Precio:¢2000</p>
+                                    <h2 id="precio-pop"></h2>
+                                    <div class="text-center d-flex   justify-content-center align-items-center">
+                                        <button class="btn-borrar-seleccion" id="btn-borrar-pop" style="display:none" onclick="borrarpop();">Borrar</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <!--queso-->
+                        <div class="row ">
+
+                            <div class=" col-sm-4 col-md-4 col-lg-4 d-flex   justify-content-center align-items-center">
+                                <img src="imgs/queso-removebg-preview.png" alt="" class="img-fluid">
+                            </div>
+                            <div class=" col-sm-4 col-md-4 col-lg-4 d-flex   justify-content-center align-items-center">
+                                <h2 id="click-borrar-queso" style="display:none">Producto agregado</h2>
+                                <select name="queso" id="queso">
+                                                <option selected disabled>CANT</option>                        
+                                                <option>1</option>
+                                                <option>2</option>
+                                                <option>3</option>
+                                                <option>4</option>
+                                                <option>5</option>
+                                                <option>6</option>
+                                                <option>7</option>
+                                                <option>8</option>
+                                                <option>9</option>
+                                                <option>10</option>
+                                            </select>
+                            </div>
+                            <div class=" col-sm-4 col-md-4 col-lg-4 d-flex   justify-content-center align-items-center">
+                                <div>
+                                    <p>Precio:¢1000</p>
+                                    <h2 id="precio-queso"></h2>
+                                    <div class="text-center d-flex   justify-content-center align-items-center">
+                                        <button class="btn-borrar-seleccion" id="btn-borrar-queso" style="display:none" onclick="borrarqueso();">Borrar</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <!--shakechoco-->
+                        <div class="row ">
+
+                            <div class=" col-sm-4 col-md-4 col-lg-4 d-flex   justify-content-center align-items-center">
+                                <img src="imgs/shakechoco-removebg-preview.png" alt="" class="img-fluid">
+                            </div>
+                            <div class=" col-sm-4 col-md-4 col-lg-4 d-flex   justify-content-center align-items-center">
+                                <h2 id="click-borrar-shakechoco" style="display:none">Producto agregado</h2>
+                                <select name="shakechoco" id="shakechoco">
+                                                <option selected disabled>CANT</option>                        
+                                                <option>1</option>
+                                                <option>2</option>
+                                                <option>3</option>
+                                                <option>4</option>
+                                                <option>5</option>
+                                                <option>6</option>
+                                                <option>7</option>
+                                                <option>8</option>
+                                                <option>9</option>
+                                                <option>10</option>
+                                            </select>
+                            </div>
+                            <div class=" col-sm-4 col-md-4 col-lg-4 d-flex   justify-content-center align-items-center">
+                                <div>
+                                    <p>Precio:¢3000</p>
+                                    <h2 id="precio-shakechoco"></h2>
+                                    <div class="text-center d-flex   justify-content-center align-items-center">
+                                        <button class="btn-borrar-seleccion" id="btn-borrar-shakechoco" style="display:none" onclick="borrarshakechoco();">Borrar</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <!--shakefresa-->
+                        <div class="row ">
+
+                            <div class=" col-sm-4 col-md-4 col-lg-4 d-flex   justify-content-center align-items-center">
+                                <img src="imgs/shakefresa-removebg-preview.png" alt="" class="img-fluid">
+                            </div>
+                            <div class=" col-sm-4 col-md-4 col-lg-4 d-flex   justify-content-center align-items-center">
+                                <h2 id="click-borrar-shakefresa" style="display:none">Producto agregado</h2>
+                                <select name="shakefresa" id="shakefresa">
+                                                <option selected disabled>CANT</option>                        
+                                                <option>1</option>
+                                                <option>2</option>
+                                                <option>3</option>
+                                                <option>4</option>
+                                                <option>5</option>
+                                                <option>6</option>
+                                                <option>7</option>
+                                                <option>8</option>
+                                                <option>9</option>
+                                                <option>10</option>
+                                            </select>
+                            </div>
+                            <div class=" col-sm-4 col-md-4 col-lg-4 d-flex   justify-content-center align-items-center">
+                                <div>
+                                    <p>Precio:¢3000</p>
+                                    <h2 id="precio-shakefresa"></h2>
+                                    <div class="text-center d-flex   justify-content-center align-items-center">
+                                        <button class="btn-borrar-seleccion" id="btn-borrar-shakefresa" style="display:none" onclick="borrarshakefresa();">Borrar</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <!--sundaychoco-->
+                        <div class="row ">
+
+                            <div class=" col-sm-4 col-md-4 col-lg-4 d-flex   justify-content-center align-items-center">
+                                <img src="imgs/sundaychoco-removebg-preview.png" alt="" class="img-fluid">
+                            </div>
+                            <div class=" col-sm-4 col-md-4 col-lg-4 d-flex   justify-content-center align-items-center">
+                                <h2 id="click-borrar-sundaychoco" style="display:none">Producto agregado</h2>
+                                <select name="sundaychoco" id="sundaychoco">
+                                                <option selected disabled>CANT</option>                        
+                                                <option>1</option>
+                                                <option>2</option>
+                                                <option>3</option>
+                                                <option>4</option>
+                                                <option>5</option>
+                                                <option>6</option>
+                                                <option>7</option>
+                                                <option>8</option>
+                                                <option>9</option>
+                                                <option>10</option>
+                                            </select>
+                            </div>
+                            <div class=" col-sm-4 col-md-4 col-lg-4 d-flex   justify-content-center align-items-center">
+                                <div>
+                                    <p>Precio:¢1000</p>
+                                    <h2 id="precio-sundaychoco"></h2>
+                                    <div class="text-center d-flex   justify-content-center align-items-center">
+                                        <button class="btn-borrar-seleccion" id="btn-borrar-sundaychoco" style="display:none" onclick="borrarsundaychoco();">Borrar</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <!--sundaycara-->
+                        <div class="row ">
+
+                            <div class=" col-sm-4 col-md-4 col-lg-4 d-flex   justify-content-center align-items-center">
+
+                                <img src="imgs/sundaycara-removebg-preview.png" alt="" class="img-fluid">
+                            </div>
+                            <div class=" col-sm-4 col-md-4 col-lg-4 d-flex   justify-content-center align-items-center">
+                                <h2 id="click-borrar-sundaycara" style="display:none">Producto agregado</h2>
+                                <select name="sundaycara" id="sundaycara">
+                                                <option selected disabled>CANT</option>                        
+                                                <option>1</option>
+                                                <option>2</option>
+                                                <option>3</option>
+                                                <option>4</option>
+                                                <option>5</option>
+                                                <option>6</option>
+                                                <option>7</option>
+                                                <option>8</option>
+                                                <option>9</option>
+                                                <option>10</option>
+                                            </select>
+                            </div>
+                            <div class=" col-sm-4 col-md-4 col-lg-4 d-flex   justify-content-center align-items-center">
+                                <div>
+                                    <p>Precio:¢1000</p>
+                                    <h2 id="precio-sundaycara"></h2>
+                                    <div class="text-center d-flex   justify-content-center align-items-center">
+                                        <button class="btn-borrar-seleccion" id="btn-borrar-sundaycara" style="display:none" onclick="borrarsundaycara();">Borrar</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <!--sundayfresa-->
+                        <div class="row ">
+
+                            <div class=" col-sm-4 col-md-4 col-lg-4 d-flex   justify-content-center align-items-center">
+                                <img src="imgs/sundayfresa-removebg-preview.png" alt="" class="img-fluid">
+                            </div>
+                            <div class=" col-sm-4 col-md-4 col-lg-4 d-flex   justify-content-center align-items-center">
+                                <h2 id="click-borrar-sundayfresa" style="display:none">Producto agregado</h2>
+                                <select name="sundayfresa" id="sundayfresa">
+                                                <option selected disabled>CANT</option>                        
+                                                <option>1</option>
+                                                <option>2</option>
+                                                <option>3</option>
+                                                <option>4</option>
+                                                <option>5</option>
+                                                <option>6</option>
+                                                <option>7</option>
+                                                <option>8</option>
+                                                <option>9</option>
+                                                <option>10</option>
+                                            </select>
+                            </div>
+                            <div class=" col-sm-4 col-md-4 col-lg-4 d-flex   justify-content-center align-items-center">
+                                <div>
+                                    <p>Precio:¢1000</p>
+                                    <h2 id="precio-sundayfresa"></h2>
+                                    <div class="text-center d-flex   justify-content-center align-items-center">
+                                        <button class="btn-borrar-seleccion" id="btn-borrar-sundayfresa" style="display:none" onclick="borrarsundayfresa();">Borrar</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container cuerpo" style="background-color:#236CB1 ">
+        <footer class=" container pb-2   text-black">
+
+
+            <div class="row text-center d-flex justify-content-center align-items-center ">
+                <div class="col-md-12 col-lg-4 pt-2 ">
+                    <h1 id="btn-footer-redes ">NUESTRAS REDES SOCIALES:</h1>
+                </div>
+
+                <div class="col-md-12 col-lg-4 " style="width:131px ">
+                    <i class="fa-4x fab fa-instagram wow animate__animated animate__pulse animate__delay-300ms animate__infinite animated "></i>
+                </div>
+
+                <div class="col-md-12 col-lg-4 " style="width:36px ">
+                    <i class="fa-4x fab fa-facebook wow animate__animated animate__pulse animate__delay-300ms animate__infinite animated "></i>
+                </div>
+
+            </div>
+            <div class="row pt-2 d-flex justify-content-center align-items-center ">
+                <div class="col-md-6 col-lg-6 text-center ">
+                    <img src="imgs/logo letras sin fondo.png " alt=" " class="img-fluid suave" style="width:50% ">
+                </div>
+                <div class="col-md-6 col-lg-6 text-left d-flex flex-column justify-content-center alig-items-center footer-info " style=" width:230px ">
+                    <p id="btn-footer-telefono ">Teléfono: 7105-4990</p>
+
+                    <a href="sections/encuentranos.html " style="padding-bottom:9px " id="btn-footer-estamos ">Donde estamos</a>
+
+                    <a href="../04 - cinema/home.html " id="btn-footer-aplicacion ">La pagina web</a>
+
+                </div>
+                <style>
+                    .footer-info a {
+                        text-decoration: none;
+                        color: black;
+                        font-size: 1.1rem;
+                    }
+                </style>
+
+            </div>
+
+
+
+
+        </footer>
+    </section>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js " integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p " crossorigin="anonymous "></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10 "></script>
+    <script src="js/index.js "></script>
+
+    <script src="js/menu.js "></script>
+
+</body>
+
+</html>

@@ -1,0 +1,64 @@
+body{
+    font-family: "Roboto", sans-serif;
+    background-color: #E6E5DE;
+}
+
+h1{
+    font-size: 24px;
+    margin-bottom: 10px;  
+    font-weight:500;  
+              
+}
+
+h2{
+    font-size: 21px;
+    margin-bottom: 16px;  
+    font-weight:500;   
+}
+
+h3{
+    font-size: 18px;
+    margin-bottom: 16px;    
+}
+
+p{
+    font-size: 17px;
+}
+
+.header_backgrund{
+    background-color: #DEE2E6;
+    position: fixed;
+    top:0;        
+}
+
+.footer{
+    background-color: #2B6CAF;
+    margin-top: 18px; 
+    color: white;   
+    text-decoration: none;    
+}
+
+
+
+#email:hover{
+    font-weight: bold;
+    
+}
+
+.top_margin{
+    margin-top: 102px;    
+}
+
+
+
+body::-webkit-scrollbar{
+    display: none;    
+}
+
+.no_select{
+    user-select: none;
+}
+
+.icon{
+    color: white;
+}

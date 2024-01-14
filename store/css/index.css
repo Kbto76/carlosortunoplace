@@ -1,0 +1,171 @@
+    body {
+        font-family: 'Montserrat', sans-serif;
+    }
+    
+    h1 {
+        font-size: 55px;
+    }
+    
+    p {
+        font-size: 25px;
+    }
+    
+    .go-top {
+        position: fixed !important;
+        bottom: 1em;
+        right: 1em;
+        padding: 1em;
+    }
+    
+    .go-top img:hover {
+        transform: scale(1.5);
+        transition: all 0.8s;
+    }
+    
+    .btn {
+        font-weight: bold;
+    }
+    
+    .navbar {
+        position: fixed;
+        top: 0px;
+        right: 0;
+        left: 0;
+    }
+    
+    .navigator {
+        height: 100px;
+        background-color: #E8C747;
+    }
+    
+    .navigator a {
+        height: 40px;
+    }
+    
+    .header {
+        background-image: url('../imgs/tienda2.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        object-fit: cover;
+        height: 657px;
+        background-size: 110% 110%;
+        background-position: center center;
+        animation: shrink 18s infinite alternate;
+    }
+    
+    @keyframes shrink {
+        0% {
+            background-size: 100% 100%;
+        }
+        100% {
+            background-size: 110% 110%;
+        }
+    }
+    
+    .shadow1 {
+        box-shadow: inset 0 0 0 1000px rgba(255, 255, 255, 0.392);
+        padding-right: 20px;
+        padding-left: 20px;
+        padding-top: 6px;
+        padding-bottom: 6px;
+        border-radius: 5px;
+    }
+    
+    .shadow2 {
+        box-shadow: inset 0 0 0 1000px rgba(255, 255, 255, 0.550);
+    }
+    
+    .nosostros {
+        /*height: 665px;*/
+        background-image: url("../imgs/nosotros4.png");
+        background-size: cover;
+        /*efecto parallax*/
+        background-attachment: fixed;
+        box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.400);
+        animation: e 15s ease infinite alternate;
+    }
+    
+    @keyframes d {
+        0% {
+            background-position: 0 0;
+        }
+        100% {
+            background-position: -100px 0;
+        }
+    }
+    
+    @keyframes e {
+        0% {
+            background-position: 0 0;
+        }
+        100% {
+            background-position: -100px 0;
+        }
+    }
+    
+    .productos {
+        background-color: #C10D2D;
+        /*height: 665px;*/
+    }
+    
+    .trabaja {
+        /*height: 665px;*/
+        background-image: url("../imgs/trabaja.png");
+        background-size: cover;
+        /*efecto parallax*/
+        background-attachment: fixed;
+        box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.400);
+    }
+    /* PERSONALIZACION MENU HAMBURGUESA / perosnalisadas*/
+    
+    .navbar-toggler {
+        background-color: #E6C752;
+        border: 3px solid white;
+    }
+    
+    .navbar-toggler:hover {
+        background-color: #C10D2D;
+    }
+    
+    .custom-toggler.navbar-toggler {
+        border-color: black;
+    }
+    /*Lineas del menu hamburguesa - stroke='rgba(0, 0, 0, 1) cambiar color de la linea / stroke-width='3' ancho de la linea*/
+    
+    .custom-toggler .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(0, 0, 0, 1)' stroke-width='3' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+    }
+    
+    .custom-toggler .navbar-toggler-icon:hover {
+        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(0, 0, 0, 1)' stroke-width='3' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+    }
+    
+    @media (max-width:1200px) {
+        .header img {
+            display: none;
+        }
+        #gallo2 {
+            display: none;
+        }
+    }
+    
+    @media (max-width:992px) {
+        h1 {
+            font-size: 35px;
+        }
+        h2 {
+            font-size: 30px;
+        }
+        h3 {
+            font-size: 25px;
+        }
+        p {
+            font-size: 15px;
+        }
+        #gallo1 {
+            display: none;
+        }
+        #video {
+            display: none;
+        }
+    }

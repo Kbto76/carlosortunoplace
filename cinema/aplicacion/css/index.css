@@ -1,0 +1,87 @@
+body {
+    font-size: 16px;
+}
+
+h1 {
+    font-size: 1.3rem;
+}
+
+h2 {
+    font-size: 1.2rem;
+}
+
+p {
+    font-size: 1.1rem;
+}
+
+.cuerpo {
+    width: 700px;
+}
+
+#menu img {
+    width: 80%;
+}
+
+.container-fluid {
+    padding-left: 0PX;
+    padding-right: 0PX;
+}
+
+.accordion-item {
+    border-radius: 0px !important;
+    /*border-radius: 0px !important;*/
+}
+
+.accordion-button {
+    border-radius: 0px !important;
+}
+
+.error {
+    border: red solid 1px;
+    background-color: rgb(250, 226, 226);
+}
+
+.suave {
+    animation: efect1 5s;
+}
+
+.disabled {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+@keyframes efect1 {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.input-error {
+    border: red solid 1px;
+    background-color: #FFF0F0;
+}
+
+@media (max-width:746px) {
+    #menu img {
+        width: 50%;
+    }
+}
+
+@media (max-width:576px) {
+    #menu img {
+        width: 20%;
+    }
+    #cuerpo {
+        width: 100%;
+    }
+    #cuerpo h2 {
+        text-align: center;
+    }
+}
+
+.btn-borrar-seleccion {
+    border-radius: 5PX;
+}

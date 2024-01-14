@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous">
+    <link href="favicon.png" rel="icon">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/tira.css">
+    <script src="https://kit.fontawesome.com/b373c5f5d3.js" crossorigin="anonymous"></script>
+    <title>le coq-cr</title>
+</head>
+
+<body id="inicio">
+
+    <!-- AQUI VA EL CODIGO MENU DE NAVEGACION RESPONSIVE -->
+    <!--sticky-top aparece el menu al desplazarse-- navbar-expand-lg clase privada de bootstrap>-->
+    <nav class="container navbar navbar-expand-lg fondo1 fixed-top navigator">
+        <!--probar con container-fluid-->
+        <div class="container">
+
+            <!--navbar-brand lugar especial de boorstrap ára ´poner los logotipos-->
+            <a class="navbar-brand logo " href="index.html" style="height:100px; width:100px">
+                <!-- <h4 class="text-white">Empresa XYZ</h4>-->
+                <img src="imgs/logo.png" alt="logo" class="img-fluid">
+            </a>
+
+            <!--boton menu hamburguesa navbar-toggler es de bootstrap-->
+            <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!--contenido del menu-->
+            <div class="collapse navbar-collapse " id="navbarCollapse">
+                <!--estilos de menu:mx-auto ml-auto mr-auto-->
+                <!--centrar opciones : text-centre-->
+                <ul class=" navbar-nav mx-auto ml-auto mr-auto mb-2 mb-md-0 ">
+                    <li style="margin-right:100px">
+                        <a style="background-color:#203B82" data-scroll class="btn pt-2 nav-link text-white optmenu" aria-current="page" href="#cultura"><span style="color:#C10D2D;font-weight: bold;">le coq</span> CR</a>
+                    </li>
+                    <li class="nav-item" style="margin-right:100px">
+                        <a style="background-color:#C10D2D" data-scroll class="btn btn-dark pt-2 nav-link text-white optmenu" aria-current="page" href="#productos">Catálogo</a>
+                    </li>
+                    <li class="nav-item" style="margin-right:100px">
+                        <a style="background-color:#C10D2D" data-scroll class="btn btn-dark nav-link text-white optmenu" aria-current="page" href="#tienda">La tienda</a>
+                    </li>
+                    <!--Submenu -->
+                    <li class="nav-item dropdown" style="margin-right:100px">
+                        <a style="background-color:#203B82" class="btn btn-dark pt-2 nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span style="color:#C10D2D;font-weight: bold;"> Quienes somos</span></a>
+                        <div class="dropdown-menu text-left" style="background-color:#E6C752">
+                            <a class="dropdown-item optmenu" href="#ceo"><span style="color:#203B82;font-weight: bold;">CEO</span></a>
+                            <a class="dropdown-item optmenu" href="#gerencia"><span style="color:#203B82;font-weight: bold;">Gerencia CR</span></a>
+                            <a class="dropdown-item optmenu" href="#vendedores"><span style="color:#C10D2D;font-weight: bold;">Vendedores</span></a>
+                        </div>
+                    </li>
+
+                    <li class="nav-item" style="margin-right:100px">
+                        <a style="background-color:#C10D2D" data-scroll class="btn btn-dark nav-link text-white optmenu" aria-current="page" href="#bolsa">Bolsa de empleo</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+
+    <section class="container header d-flex justify-content-center  flex-column d-flex-row align-items-center" style=" margin-top: 100px; border-bottom:solid #203B82 5px; margin-bottom:40px">
+
+
+        <h1 class="text-center text-dark shadow1" style="font-weight:bold">Somos la primer tienda exclusiva de calzado
+        </h1>
+        <br>
+        <br>
+        <br>
+        <div class="container-fluid d-flex justify-content-around  align-items-center">
+            <img src="imgs/tenis1.png" alt="Anteojos 3D " class="img-fluid " style="height:240px ">
+            <i class="fa fa-plus fa-5x" style="color:white"></i>
+            <img src="imgs/tenis2.png " alt="Anteojos 3D " class="img-fluid" style="height:240px ">
+        </div>
+        <br>
+        <h1 class="text-center shadow1">
+            <span style="color:#C10D2D;font-size:55px "><strong>le coq</strong></span>
+            <span style="color:#203B82;font-size:55px "> <strong> sportif </strong> </span>
+            <br> <span class="text-dark" style="font-weight:bold">Costa Rica</span>
+        </h1>
+
+
+
+
+
+        <div id="cultura"></div>
+    </section>
+
+    <section class="container text-center nosostros text-dark" id="" style="border-bottom:solid #203B82 5px; padding-bottom:100px">
+        <h1 class="pt-4  text-white">Un poco de cultura general</h1>
+
+        <div class="row pt-2 text-center " style="font-weight:bold ">
+            <div class="col-sm-3 col-md-6 col-lg-4 pt-2 ">
+                <h2 class="shadow2 " style="font-weight: bold">
+                    La marca
+                    <span style="color:#C10D2D ;font-weight: bold">le coq</span>
+                    <span style="color:#203B82 ;font-weight: bold"> sportif</span>
+                </h2>
+                <div style="text-align:left " class="pt-2 border-top border-secondary shadow2 ps-2 ">
+                    <p>
+                        Fundada en 1882 por Émile Camuset y con sede en Entzheim Francia.
+                        <br>
+                        <br> El nombre y la marca de la empresa derivan del gallo galo, símbolo nacional de Francia.
+                        <br>
+                        <br> En mas de 130 años de experiencia en lo deportivo le aportan una habilidad inimitable y una auténtica legitimidad.
+                    </p>
+                </div>
+            </div>
+            <div class="col-sm-3 col-md-6 col-lg-4 pt-2 ">
+                <h2 class="shadow2 ">
+                    <span style="color:#C10D2D ;font-weight: bold">le coq</span>
+                    <span style="color:#203B82 ;font-weight: bold"> sportif</span> <span style="font-weight: bold">Costa Rica</span>
+                </h2>
+                <div style="text-align:left;  " class="pt-2 border-top border-secondary shadow2 ps-2 ">
+                    <p>
+                        Abrimos nuestra primera tienda oficial en la región Centro Americana.
+                        <br>
+                        <br> Con orgullo y sactifacción esperamos complir con tadas las exigencias nuestros clientes.
+                        <br>
+                        <br> Esperamos muy pronto poder abrir mas tiendas en diferentes ciudades del país y así también ampliar el catálogo.
+                    </p>
+                </div>
+            </div>
+            <div class="col-sm-3 col-md-6 col-lg-4 pt-2 ">
+                <h2 class="shadow2 " style="font-weight: bold"><span style="color:#C10D2D ;font-weight: bold">le coq</span> es sustentable</h2>
+                <div style="text-align:left;  " class="pt-2 border-top border-secondary shadow2 ps-2 ">
+                    <p>
+                        Los materiales con los que se confeccionan nuestros productos son 100 reciclados.
+                        <br>
+                        <br> Todo la energía para operar nuestra tienda en Costa Rica es renovable utilizamos energía solar.
+                        <br>
+                        <br> No utilizamos papel en ninguna de nuestras transacciones o facturación.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+        <div id="productos"></div>
+    </section>
+
+    <section class="container productos text-center" style="padding-bottom:95px">
+        <h1 class="pt-2  text-white">Nuestros productos</h1>
+        <div class=" ">
+
+
+            <div id="owl-demo" class="owl-carousel text-center">
+
+                <div class="item">
+                    <div class="">
+
+                        <img class="lazyOwl img-fluid " data-src="imgs/tenis1.png" alt="Cliente1" style="height:115px">
+
+                    </div>
+                    <div class="">
+                        <h4 class="">ARTHUR ASHE Unisex</h4>
+
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="">
+                        <img class="lazyOwl img-fluid " data-src="imgs/tenis2.png" alt="Cliente2" style="height:115px">
+                    </div>
+                    <div class="">
+                        <h4 class="">HERITAGE Unisex</h4>
+
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="">
+                        <img class="lazyOwl img-fluid " data-src="imgs/tenis3.png" alt="Cliente2" style="height:115px">
+                    </div>
+                    <div class="">
+                        <h4 class="">HERALDIQUE Unisex</h4>
+
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="">
+
+                        <img class="lazyOwl img-fluid " data-src="imgs/tenis4.png" alt="Cliente1" style="height:115px">
+
+                    </div>
+                    <div class="">
+                        <h4 class="">BLAZON Unisex</h4>
+
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="">
+                        <img class="lazyOwl img-fluid " data-src="imgs/tenis5.png" alt="Cliente2" style="height:115px">
+                    </div>
+                    <div class="">
+                        <h4 class="">COURTGALO Unizex</h4>
+
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="">
+                        <img class="lazyOwl img-fluid " data-src="imgs/tenis6.png" alt="Cliente2" style="height:115px">
+                    </div>
+                    <div class="">
+                        <h4 class="">RACE Unizex</h4>
+
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="">
+                        <img class="lazyOwl img-fluid " data-src="imgs/tenis7.png" alt="Cliente2" style="height:115px; width:258px">
+                    </div>
+                    <div class="">
+                        <h4 class="">COURTGALO Unizex</h4>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="d-flex justify-content-between align-items-center pb-2">
+            <img src="imgs/logo2.png" alt="" class="img-fluid logosube1" style="height:283px">
+            <iframe class="video1 border border-dark rounded" width="510" height="265" src="https://www.youtube.com/embed/SV1Y0pfMo4k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+            <img src="imgs/logo2.png" alt="" class="img-fluid logosube2" style="height:283px">
+        </div>
+        <div id="tienda"></div>
+    </section>
+
+    <section class="container tienda " style="background-color:#E6C752; border-top:solid #203B82 5px;padding-bottom:100px">
+
+        <h1 class="pt-4  text-dark text-center pb-4 pt-2 " style="font-weight:bold">La tienda
+            <span style="color:#C10D2D;font-size:55px; ">le coq</span>
+            <span style="color:#203B82;font-size:55px; "> sportif </span>
+        </h1>
+        <div class="row">
+            <div class="col-sm-3 col-md-6 col-lg-6" style="line-height:1rem">
+                <h2 style="line-height:3rem"><strong>En donde:</strong>
+                    <br>Mall <strong>Multiplaza</strong> Escazú</h2>
+                <br>
+                <h2 style="line-height:3rem"><strong>Ubicación:</strong>
+                    <br>Tercer nivel, local 160-164</h2>
+                <br>
+
+                <h2 style="line-height:3rem"><strong>Horarios:</strong>
+                    <br><strong>Lunes a sábado:</strong> 10:00 a.m. a 9:00 p.m.
+                    <br><strong>Domingo:</strong> 10:00 a.m. a 8:00 p.m.
+                </h2>
+                <br>
+
+                <h2 style="line-height:3rem"><strong>Teléfono:</strong>
+                    <br>7105-4990</h2>
+                <br>
+
+            </div>
+
+            <div class="col-sm-3 col-md-6 col-lg-6 ">
+
+                <div id="carouselExampleControls" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="2000" data-bs-pause="hover">
+                    <div class="carousel-inner">
+                        <div class="carousel-item ">
+                            <img src="imgs/slider/1.jpg" class="d-block w-100 rounded" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="imgs/slider/2.jpg" class="d-block w-100 rounded" alt="...">
+                        </div>
+
+                        <div class="carousel-item">
+                            <img src="imgs/slider/3.jpg" class="d-block w-100 rounded" alt="...">
+                        </div>
+
+                        <div class="carousel-item">
+                            <img src="imgs/slider/4.jpg" class="d-block w-100 rounded" alt="...">
+                        </div>
+
+                        <div class="carousel-item active">
+                            <img src="imgs/slider/5.png" class="d-block w-100 rounded" alt="...">
+                        </div>
+
+                    </div>
+
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+                <div style="height:250px" class="border mt-2 rounded">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3929.879667240921!2d-84.15293162507744!3d9.943968973996542!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8fa0fb698e1ba15b%3A0x781267d196d66afc!2sMultiplaza!5e0!3m2!1ses!2scr!4v1669308358293!5m2!1ses!2scr"
+                        width="100%" height="240" allowfullcreen="" loading="lazy"></iframe>
+
+                </div>
+
+            </div>
+
+
+
+        </div>
+
+        </div>
+
+
+
+
+        <div id="ceo"></div>
+    </section>
+
+    <section class="container ceo" style="border-bottom:solid #203B82 5px; background-color: #998385; padding-bottom: 100px;">
+        <h1 class="text-center pt-2" style="font-weight:bold">Chief Executive Officer</h1>
+        <div class="row">
+            <div class="col-sm-6 col-md-6 col-lg-6  text-center text-white">
+                <img src="imgs/ceo.jpeg" class="img-fluid pt-5  pb-4" alt="ceo">
+            </div>
+            <div class="col-sm-6 col-md-6 col-lg-6 ">
+                <h2 style="text-decoration: underline" class="text-center ">Adrienne Marie Moulin Toussaint</h2>
+                <br>
+                <h3 style="line-height:3rem">Adrienne Marie trabajó en marketing y ventas en Francia, así como a nivel internacional, para algunas de las marcas deportivas más importantes del mundo, como Nike, Puma y Oxbow”, explica la marca. “Con más de 18 años en el sector deportivo,
+                    además de una energía nueva y fresca, Frank trae consigo un excelente conocimiento de los asuntos empresariales y de gestión que ayudarán a Le Coq Sportif en su nueva fase de desarrollo.</h3>
+
+
+            </div>
+
+        </div>
+        <div id="gerencia"></div>
+    </section>
+
+
+    <section class="container gerencia" style="border-bottom:solid #203B82 5px; background-color: #6c757d; padding-bottom: 93px;">
+        <h1 class="text-center pt-2" style="font-weight:bold">Gerencia CR</h1>
+        <div class="row text-center">
+            <div class="col-sm-12 col-md-12 col-lg-4">
+                <h2 style="text-decoration: underline">Enrique Piñera Bustos</h2>
+                <img src="imgs/geren0.jpeg" alt="" style="width:334px">
+                <h2>Gerente general</h2>
+                <h3 class="text-start">Graduado en Administración con enfasis en E-Comerce en UCR, a trabajando para marcas como Nike y Puma.</h3>
+            </div>
+            <div class="col-sm-12 col-md-12 col-lg-4">
+                <h2 style="text-decoration: underline">Ingrid Sequeira Bravo</h2>
+                <img src="imgs/geren1.jpeg" alt="" style="width:334px">
+                <h2>Gerente RH</h2>
+                <h3 class="text-start">Graduada en Psicología con un MBA en la universidad Cambridge UK, se enfoca en innovación y bienestar.</h3>
+            </div>
+            <div class="col-sm-12 col-md-12 col-lg-4">
+                <h2 style="text-decoration: underline">Monserrat Pacheco Coto</h2>
+                <img src="imgs/geren2.jpeg" alt="" style="width:334px">
+                <h2>Gerente Finazas</h2>
+                <h3 class="text-start">Graduada en Banca y Finanzas en la Ulacit con enfasis en E-comerse,se enfoca tecnológias limpias.</h3>
+            </div>
+
+
+        </div>
+        <div id="vendedores"></div>
+    </section>
+
+    <section class="container vendedores" style="border-bottom:solid #203B82 5px; background-color: #E6C752; padding-bottom:100px">
+        <h1 class="text-center pt-2" style="font-weight:bold">Vendedores</h1>
+        <h2 class="text-center pt-2" style="font-weight:bold">Tienda Multiplaza Escazú</h2>
+        <div class="row text-center pt-5 pb-5">
+            <div class="col-sm-12 col-md-12 col-lg-3 pb-5">
+                <img src="imgs/vende1.jpeg" class="img-fluid pb-2" alt=" ">
+                <h3 class="pb-3">Sonia Mora Hidalgo</h3>
+            </div>
+            <div class="col-sm-12 col-md-12 col-lg-3 pb-5 ">
+                <img src="imgs/vende2.jpeg " class="img-fluid pb-2 " alt=" ">
+                <h3 class="pb-2">Fabiola Montes Perez</h3>
+            </div>
+            <div class="col-sm-12 col-md-12 col-lg-3 pb-5 ">
+                <img src="imgs/vende3.jpeg " class="img-fluid pb-2 " " alt=" ">
+                <h3 class="pb-3 ">Carlos Ortuño Bravo</h3>
+            </div>
+            <div class="col-sm-12 col-md-12 col-lg-3 pb-5 ">
+                <img src="imgs/vende4.jpeg " class="img-fluid pb-2 " " alt=" ">
+                <h3 class="pb-3">Manuela Sion del Rio</h3>
+            </div>
+        </div>
+        <div id="bolsa"></div>
+    </section>
+
+    <section class="container trabaja " style="border-bottom:solid #203B82 5px; ;">
+        <h1 class="text-center pt-2 text-white">Trabaja con nosotros</h1>
+        <div class="row">
+            <div class="col-sm-6 col-md-6 col-lg-6">
+                <h2 class="shadow2"><strong>Llamános!</strong>
+                    <br><i>Estamos buscando gente con estilo...</i></h2>
+                <br>
+                <h3 style="line-height:2.5rem" class="shadow2">En
+                    <span style="color:#C10D2D ">le coq</span>
+                    <span style="color:#203B82 "> sportif </span> Costa Rica queremos crecer y poder así ofrecer mas varied y diverisdad de productos, nuestra cultura empresarial respeta todas las religiones, orientaciones sexyal y grupos etcnicos, principalmente
+                    le damos especial prioridad ala creatividad e innovación, asi que no lop pienses mas y forma parte de nuestra familia, que recien empieza en el pais.
+                    <br>
+                    <h2 class="text-start shadow2"><i>Un nouveau jour se lève</i> </h2>
+
+                </h3>
+            </div>
+            <div class="col-sm-6 col-md-6 col-lg-6 d-flex justify-content-center" style="font-size:30px">
+                <div class="text-center  d-flex justify-content-center flex-column align-items-center shadow2 mb-2" style="line-height:3rem">
+                    <h2 style="font-size:38px">Nuestro Email: <strong>lecoqsportifcr@lecoq.com</strong> </h2>
+                    <br>
+                    <h2 style="font-size:38px">Número telefónico:
+                        <br><strong>506-2205-7350</strong> </h2>
+                    <br>
+
+                    <h2 style="font-size:38px">Buscanos en redes sociales</h2>
+
+                    <div class="" style="width:50% ">
+                        <div class="row ">
+                            <div class="col-md-6 ">
+                                <i class="fa-3x fab fa-instagram "></i>
+                            </div>
+
+                            <div class="col-md-6 ">
+                                <i class="fa-3x fab fa-facebook "></i>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+
+    </section>
+
+    <section>
+        <footer class="container" style="background-color:#E6C752">
+            <div style="height:43px" class="text-center ">
+                <p style="font-weight:bold; font-size:15px; padding-top:10px">
+                    EXAMEN FINAL ONE-PAGE / Carlos Ortuño / Universidada Cnfotec 2022
+                </p>
+
+            </div>
+        </footer>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="js/jquery.min.js "></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js " integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p " crossorigin="anonymous "></script>
+
+    <!-- Scroll Top -->
+    <a data-scroll class="go-top " href="#inicio " title="Ir al inicio ">
+        <img src="imgs/flecha.jpg " class="img-fluid " alt="Ir arriba ">
+    </a>
+
+
+    <script src="js/smooth-scroll.min.js "></script>
+    <script>
+        smoothScroll.init({
+            selector: '[data-scroll]',
+            selectorHeader: null,
+            speed: 2000,
+            easing: 'easeInOutCubic',
+            offset: 0,
+            callback: function(anchor, toggle) {}
+        });
+    </script>
+
+    <script src="js/tira.js "></script>
+    <script>
+        $(document).ready(function() {
+            $("#owl-demo ").owlCarousel({
+                items: 4,
+                lazyLoad: true,
+                autoPlay: true,
+                navigation: true,
+                navigationText: [" ", " "],
+                /*permite ir del final al inicio*/
+                rewindNav: true,
+                scrollPerPage: false,
+                pagination: false,
+                paginationNumbers: false,
+            });
+
+        });
+    </script>
+
+    <script src="js/elastico.js"></script>
+
+</body>
+
+</html>
