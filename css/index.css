@@ -73,10 +73,10 @@ body::-webkit-scrollbar{
 
 @media (max-width:1080px) {
     #uno{
-        width: 100px;
+        width: 200px;
     }
 
     #tres{
-        width: 100px;
+        width: 200px;
     }
 } 
