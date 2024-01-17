@@ -71,12 +71,12 @@ body::-webkit-scrollbar{
     max-width: 370px;
 }
 
-@media (max-width:800px) {
+@media (max-width:1080px) {
     #uno{
-        width: 250px;
+        width: 100px;
     }
 
     #tres{
-        width: 250px;
+        width: 100px;
     }
 } 
