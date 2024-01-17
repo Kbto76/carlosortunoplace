@@ -62,3 +62,13 @@ body::-webkit-scrollbar{
 .icon{
     color: white;
 }
+
+@media (max-width:1080px) {
+    #uno{
+        max-width: 50px;
+    }
+
+    #tres{
+        max-width: 50px;
+    }
+}
