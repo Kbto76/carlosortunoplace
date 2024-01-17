@@ -63,12 +63,20 @@ body::-webkit-scrollbar{
     color: white;
 }
 
-@media (max-width:1080px) {
+#uno{
+    max-width: 350px;
+}
+
+#tres{
+    max-width: 370px;
+}
+
+@media (max-width:800px) {
     #uno{
-        max-width: 50px;
+        width: 250px;
     }
 
     #tres{
-        max-width: 50px;
+        width: 250px;
     }
-}
+} 
