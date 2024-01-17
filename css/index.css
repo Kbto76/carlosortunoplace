@@ -75,6 +75,9 @@ body::-webkit-scrollbar{
     #uno{
         width: 200px;
     }
+    #dos{
+        height:265px;
+    }
 
     #tres{
         width: 200px;
