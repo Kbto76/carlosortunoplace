@@ -60,7 +60,7 @@ body::-webkit-scrollbar{
 }
 
 .icon{
-    color: white;
+    color: white;    
 }
 
 #uno{
@@ -79,4 +79,5 @@ body::-webkit-scrollbar{
     #tres{
         width: 200px;
     }
+    
 } 
