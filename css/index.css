@@ -82,5 +82,12 @@ body::-webkit-scrollbar{
     #tres{
         width: 200px;
     }
+
+    #video{
+        width: 30%;
+        height: 60%;
+    }
+        
+    
     
 } 
